@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="app">
+
+    <!-- Header -->
+    <header class="header">
+        <div>
+            <p class="welcome">MY PRODUCTIVITY</p>
+            <h1>To-Do List</h1>
+            <p class="subtitle">Plan your day. Complete your goals.</p>
+        </div>
+
+        <div class="date" id="currentDate"></div>
+    </header>
+
+
+    <!-- Statistics -->
+    <section class="stats">
+
+        <div class="stat-box total">
+            <div class="stat-icon">📋</div>
+            <div>
+                <span class="stat-number" id="totalTasks">0</span>
+                <span class="stat-label">Total Tasks</span>
+            </div>
+        </div>
+
+        <div class="stat-box completed">
+            <div class="stat-icon">✓</div>
+            <div>
+                <span class="stat-number" id="completedTasks">0</span>
+                <span class="stat-label">Completed</span>
+            </div>
+        </div>
+
+        <div class="stat-box remaining">
+            <div class="stat-icon">⏳</div>
+            <div>
+                <span class="stat-number" id="remainingTasks">0</span>
+                <span class="stat-label">Remaining</span>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Add Task -->
+    <section class="add-task-card">
+
+        <h2>Add New Task</h2>
+
+        <form id="todoForm">
+
+            <div class="form-row">
+
+                <div class="input-group task-input-group">
+
+                    <label for="taskInput">Task</label>
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="What do you need to do?"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="startTime">Start Time</label>
+
+                    <input
+                        type="time"
+                        id="startTime"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="endTime">End Time</label>
+
+                    <input
+                        type="time"
+                        id="endTime"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit" class="add-btn">
+                    + Add Task
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- Task Section -->
+    <section class="tasks-section">
+
+        <div class="section-header">
+
+            <div>
+                <h2>Today's Tasks</h2>
+                <p>Manage your schedule</p>
+            </div>
+
+            <button id="clearCompleted" class="clear-btn">
+                Clear Completed
+            </button>
+
+        </div>
+
+
+        <!-- Tasks appear here -->
+        <ul id="taskList"></ul>
+
+
+        <!-- Empty message -->
+        <div id="emptyMessage" class="empty-message">
+
+            <div class="empty-icon">📝</div>
+
+            <h3>No tasks yet</h3>
+
+            <p>Add your first task and start being productive!</p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

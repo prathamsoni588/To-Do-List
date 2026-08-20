@@ -1,0 +1,587 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at top left, #dbeafe, transparent 35%),
+        radial-gradient(circle at bottom right, #ede9fe, transparent 35%),
+        #f5f7fb;
+
+    color: #1e293b;
+
+    padding: 35px 20px;
+}
+
+
+/* =========================================
+   MAIN APP
+========================================= */
+
+.app {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.welcome {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #6366f1;
+
+    margin-bottom: 7px;
+}
+
+.header h1 {
+    font-size: 38px;
+
+    margin-bottom: 6px;
+
+    color: #111827;
+}
+
+.subtitle {
+    color: #64748b;
+
+    font-size: 15px;
+}
+
+.date {
+    background: white;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+
+    color: #475569;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.stat-box {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
+
+    transition: transform 0.2s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-3px);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+.total .stat-icon {
+    background: #eef2ff;
+}
+
+.completed .stat-icon {
+    background: #dcfce7;
+}
+
+.remaining .stat-icon {
+    background: #fef3c7;
+}
+
+.stat-number {
+    display: block;
+
+    font-size: 26px;
+
+    font-weight: 800;
+
+    color: #111827;
+}
+
+.stat-label {
+    display: block;
+
+    font-size: 13px;
+
+    color: #64748b;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================
+   ADD TASK CARD
+========================================= */
+
+.add-task-card {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
+}
+
+.add-task-card h2 {
+    font-size: 20px;
+
+    margin-bottom: 20px;
+
+    color: #111827;
+}
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 150px 150px auto;
+
+    gap: 12px;
+
+    align-items: end;
+}
+
+.input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.input-group label {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #475569;
+}
+
+.input-group input {
+    height: 45px;
+
+    border: 1px solid #dbe1ea;
+
+    border-radius: 9px;
+
+    padding: 0 12px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    background: #f8fafc;
+}
+
+.input-group input:focus {
+    border-color: #6366f1;
+
+    background: white;
+
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+}
+
+
+/* =========================================
+   ADD BUTTON
+========================================= */
+
+.add-btn {
+    height: 45px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 0 18px;
+
+    background: #6366f1;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.add-btn:hover {
+    background: #4f46e5;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   TASK SECTION
+========================================= */
+
+.tasks-section {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
+}
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 21px;
+
+    color: #111827;
+}
+
+.section-header p {
+    font-size: 13px;
+
+    color: #64748b;
+
+    margin-top: 4px;
+}
+
+.clear-btn {
+    border: none;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    padding: 9px 13px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.clear-btn:hover {
+    background: #fecaca;
+}
+
+
+/* =========================================
+   TASK ITEM
+========================================= */
+
+#taskList {
+    list-style: none;
+}
+
+.task-item {
+    display: grid;
+
+    grid-template-columns: 35px 1fr auto auto;
+
+    gap: 15px;
+
+    align-items: center;
+
+    padding: 16px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 13px;
+
+    background: #fafbff;
+
+    transition: 0.2s;
+}
+
+.task-item:hover {
+    border-color: #c7d2fe;
+
+    transform: translateX(2px);
+}
+
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+
+    cursor: pointer;
+
+    accent-color: #6366f1;
+}
+
+
+/* =========================================
+   TASK TEXT
+========================================= */
+
+.task-text {
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #1e293b;
+
+    word-break: break-word;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================
+   TIME SLOT
+========================================= */
+
+.time-slot {
+    min-width: 150px;
+
+    text-align: center;
+
+    padding: 9px 12px;
+
+    border-radius: 9px;
+
+    background: #eef2ff;
+
+    color: #4f46e5;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.time-icon {
+    margin-right: 5px;
+}
+
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
+.delete-btn {
+    border: none;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    padding: 8px 11px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.delete-btn:hover {
+    background: #fecaca;
+}
+
+
+/* =========================================
+   EMPTY MESSAGE
+========================================= */
+
+.empty-message {
+    text-align: center;
+
+    padding: 45px 20px;
+
+    color: #94a3b8;
+}
+
+.empty-icon {
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+.empty-message h3 {
+    color: #475569;
+
+    margin-bottom: 6px;
+}
+
+.empty-message p {
+    font-size: 13px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .task-input-group {
+        grid-column: 1 / -1;
+    }
+
+    .add-btn {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    .header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .date {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .task-input-group {
+        grid-column: auto;
+    }
+
+    .task-item {
+        grid-template-columns: 30px 1fr auto;
+
+        gap: 10px;
+    }
+
+    .time-slot {
+        grid-column: 2 / 3;
+
+        min-width: auto;
+
+        text-align: left;
+    }
+
+    .delete-btn {
+        grid-column: 3;
+
+        grid-row: 1 / span 2;
+    }
+
+    .section-header {
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+}
